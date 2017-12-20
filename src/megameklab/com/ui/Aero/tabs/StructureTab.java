@@ -502,6 +502,9 @@ public class StructureTab extends ITab implements AeroBuildListener {
     @Override
     public void vstolChanged(boolean vstol) {
         getAero().setVSTOL(vstol);
+        refresh.refreshPreview();
+        refresh.refreshStatus();
+        refresh.refreshSummary();
     }
     
     @Override
@@ -558,6 +561,7 @@ public class StructureTab extends ITab implements AeroBuildListener {
     @Override
     public void armorPointsChanged(int location, int front, int rear) {
         getAero().initializeArmor(front, location);
+        getAero().initializeThresh(location);
         if (panArmor.getArmorType() == EquipmentType.T_ARMOR_PATCHWORK) {
             getAero().setArmorTonnage(panArmorAllocation.getTotalArmorWeight(getAero()));
         }
@@ -597,6 +601,7 @@ public class StructureTab extends ITab implements AeroBuildListener {
         getAero().initializeArmor(wing, Aero.LOC_LWING);
         getAero().initializeArmor(wing, Aero.LOC_RWING);
         getAero().initializeArmor(aft, Aero.LOC_AFT);
+        getAero().autoSetThresh();
 
         panArmorAllocation.setFromEntity(getAero());
         refresh.refreshPreview();
