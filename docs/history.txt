@@ -1,6 +1,15 @@
 VERSION HISTORY:
 ----------------
-v0.43.9-git
+v0.43.11-RC5
++ Issue #156: Davy Crockett ammo issue
+
+v0.43.10-RC4
++ Issue #147: Clan Endo-Composite is showing wrong crit slots.
++ Issue #136: 'Cargo Space' cannot be removed from canon units.
++ Update MegaMek.jar to v0.43.10-RC4
+
+v0.43.9-RC3
++ Update MegaMek.jar to v0.43.9-RC3
 
 v0.43.8-RC2 (2018-02-11 22:40 UTC)
 + Issue #137: BA Printing doesn't print Ammo
